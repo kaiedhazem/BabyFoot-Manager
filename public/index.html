@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BF Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Gestionnaire de Parties de Babyfoot</h1>
+  <div class="container">
+    <div class="left">
+      <input type="text" id="nouvelle-partie" placeholder="Nouvelle partie..." />
+      <button id="ajouter">Ajouter</button>
+      <div id="parties"></div>
+    </div>
+    <div class="right">
+      <div class="tchat">
+        <input type="text" id="nickname" placeholder="Nickname ..." />
+        <div class="messages" id="messages"></div>
+        <input type="text" id="message" placeholder="Tapez votre message ici..." />
+        <button id="envoyer">Envoyer</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
