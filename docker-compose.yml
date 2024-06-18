@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app:
+    image: babyfoot  # Remplacez par le nom de votre image Node.js construite
+    environment:
+      - DB_USER="postgres"
+      - DB_HOST="babyfoot-manager_db_1"  # Nom du service Docker pour PostgreSQL
+      - DB_DATABASE="babyfoot_manager"
+      - DB_PASSWORD=
+      - DB_PORT=5432
+      - PORT=3000
+    ports:
+      - "3000:3000"  # Port du conteneur Node.js exposé sur l'hôte
+    depends_on:
+      - db  # Indique que ce service dépend du service 'db' (PostgreSQL)
+    networks:
+      - app-network  # Utilisation du réseau personnalisé 'app-network'
+
+  db:
+    image: postgres:latest  # Utilisation de l'image PostgreSQL officielle
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD:
+      POSTGRES_DB: babyfoot_manager  # Nom de la base de données à créer
+    ports:
+      - "5432:5432"  # Port PostgreSQL exposé sur l'hôte
+    volumes:
+      - postgres-data:/var/lib/postgresql/data  # Volume pour persister les données de PostgreSQL
+    networks:
+      - app-network  # Utilisation du même réseau personnalisé 'app-network'
+
+volumes:
+  postgres-data:  # Définition du volume Docker pour stocker les données de PostgreSQL
+
+networks:
+  app-network:
+    driver: bridge  # Utilisation du driver de réseau 'bridge' pour le réseau personnalisé
