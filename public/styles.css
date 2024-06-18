@@ -1,142 +1,164 @@
 /* Styles globaux */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    margin: 0;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Container principal */
-  .container {
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 700px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  /* Section gauche pour les parties */
-  .left {
-    flex: 1;
-  }
-  
-  #nouvelle-partie {
-    width: calc(100% - 85px);
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #ajouter {
-    padding: 10px;
-    border: none;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #parties {
-    margin-top: 20px;
-  }
-  
-  .partie {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .partie button {
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
-  
-  .terminee {
-    text-decoration: line-through;
-  }
-  
-  .compteur {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  /* Section droite pour le tchat */
-  .right {
-    flex: 0.4;
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid #ddd;
-    padding-left: 20px;
-  }
-  
-  .tchat {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  #nickname {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #messages {
-    flex: 1;
-    border: 1px solid #ddd;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    max-height: 300px;
-  }
-  
-  #message {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    flex: none;
-  }
-  
-  #envoyer {
-    padding: 10px;
-    border: none;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: none;
-  }
-  
-  /* Ajouter des styles supplémentaires pour améliorer l'interface */
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  input:focus, button:focus {
-    outline: none;
-    border-color: #007BFF;
-  }
-  
-  #ajouter:hover, #envoyer:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Container principal */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  height: 70vh;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Section gauche pour les parties */
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+}
+
+#nouvelle-partie {
+  width: calc(100% - 230px);
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#ajouter {
+  padding: 10px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#parties {
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: calc(70vh - 140px);
+}
+
+.partie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.partie button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.terminee {
+  text-decoration: line-through;
+}
+
+/* Section droite pour le tchat */
+.right {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.tchat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#nickname {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#messages {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#message {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: none;
+}
+
+#envoyer {
+  padding: 10px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: none;
+}
+
+/* Style du compteur */
+.compteur {
+  background: #007BFF;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto; /* Pour pousser le compteur à l'extrême droite de la section */
+}
+
+.compteur:hover {
+  background-color: #0056b3;
+}
+
+/* Ajouter des styles supplémentaires pour améliorer l'interface */
+button:hover {
+  background-color: #0056b3;
+}
+
+input:focus, button:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+#ajouter:hover, #envoyer:hover {
+  background-color: #0056b3;
+}
