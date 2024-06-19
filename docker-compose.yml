@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD:
       POSTGRES_DB: babyfoot_manager  # Nom de la base de données à créer
     ports:
-      - "5432:5432"  # Port PostgreSQL exposé sur l'hôte
+      - "5432:5432"  
     volumes:
       - postgres-data:/var/lib/postgresql/data  # Volume pour persister les données de PostgreSQL
     networks:
